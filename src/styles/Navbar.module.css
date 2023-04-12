@@ -1,0 +1,41 @@
+.navBar {
+  display: flex;
+  height: 5vh;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  margin-bottom: 2rem;
+  background-color: #333;
+  color: #f0f0f0;
+  border-bottom: 2px solid #111;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.linkItems {
+  display: flex;
+  gap: 2rem;
+  margin-right: 1rem;
+  list-style: none;
+}
+
+.linkItems li {
+  transition: 0.4s;
+}
+
+.linkItems li:hover {
+  transform: scale(1.2);
+}
+
+.link {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #f0f0f0;
+  padding: 0.3rem;
+}
