@@ -10,5 +10,7 @@ html, body {
 }
 
 .mainContainer {
-  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  min-height: 75vh;
 }

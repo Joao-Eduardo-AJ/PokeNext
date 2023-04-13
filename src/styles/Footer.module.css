@@ -2,13 +2,13 @@
     display: flex;
     justify-content: center;
     background-color: #333;
-    height: 15vh;
+    height: 18vh;
     color: #f0f0f0;
     border-top: 2px solid #111;
 }   
 
 .footer p {
-    margin-top: 3rem;
+    margin-top: 4rem;
 }
 
 .footer span {
