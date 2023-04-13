@@ -1,0 +1,11 @@
+.about {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about h1 {
+    font-size: 3rem;
+}
