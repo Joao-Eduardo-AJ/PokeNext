@@ -1,6 +1,14 @@
+.homeContent {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+}
+
 .titleContainer {
     display: flex;
     align-items: center;
+    margin-top: 2rem;
 }
 
 .titleContainer p {
@@ -13,5 +21,12 @@
 }
 
 .image {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
+}
+
+.cardWrapper {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    padding:  0 0 3rem  0;
 }
