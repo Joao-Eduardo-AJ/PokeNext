@@ -9,8 +9,8 @@ const About = () => {
       <Image
         src="/images/charizard.png"
         alt="Charizard"
-        width={440}
-        height={410}
+        width={200}
+        height={200}
       />
     </article>
   );
