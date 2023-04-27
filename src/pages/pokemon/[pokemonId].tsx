@@ -28,34 +28,46 @@ type PokemonProps = {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const maxPokemons = 151;
-  const api = 'https://pokeapi.co/api/v2/pokemon/';
+  try {
+    const maxPokemons = 151;
+    const api = 'https://pokeapi.co/api/v2/pokemon/';
 
-  const result = await fetch(`${api}/?limit=${maxPokemons}`);
-  const data: result = await result.json();
+    const result = await fetch(`${api}/?limit=${maxPokemons}`);
+    const data: result = await result.json();
 
-  const paths = data.results.map((pokemon, index) => {
+    const paths = data.results.map((_, index) => {
+      return {
+        params: { pokemonId: (index + 1).toString() },
+      };
+    });
+
     return {
-      params: { pokemonId: (index + 1).toString() },
+      paths,
+      fallback: false,
     };
-  });
-
-  return {
-    paths,
-    fallback: false,
-  };
+  } catch (error) {
+    console.log(error);
+    return { paths: [], fallback: false };
+  }
 };
 
 export const getStaticProps: GetStaticProps = async context => {
-  const id = context.params?.pokemonId;
+  try {
+    const id = context.params?.pokemonId;
 
-  const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
 
-  const data = await result.json();
+    const data = await result.json();
 
-  return {
-    props: { pokemon: data },
-  };
+    return {
+      props: { pokemon: data },
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      notFound: true,
+    };
+  }
 };
 
 const Pokemon = ({ pokemon }: PokemonProps) => {
