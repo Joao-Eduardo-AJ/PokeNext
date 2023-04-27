@@ -5,12 +5,8 @@
   box-sizing: border-box;
 }
 
-html, body {
-  overflow: hidden;
-}
-
 .mainContainer {
   display: flex;
   justify-content: center;
-  min-height: 75vh;
+  height: 75vh;
 }
