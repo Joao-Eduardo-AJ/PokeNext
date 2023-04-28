@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 interface CardProps {
   pokemon: {
-    name: string;
     id: number;
+    name: string;
   };
 }
 

@@ -13,7 +13,7 @@ interface result {
   results: [
     {
       id: number;
-      url: string;
+      name: string;
     }
   ];
 }
@@ -31,7 +31,7 @@ export const getStaticProps = async () => {
     const maxPokemons = 151;
     const api = 'https://pokeapi.co/api/v2/pokemon/';
 
-    const result = await fetch(`${api}/?limit=${maxPokemons}`);
+    const result = await fetch(`${api}?limit=${maxPokemons}`);
     const data: result = await result.json();
 
     data.results.forEach((item, index) => {
