@@ -1,6 +1,7 @@
 import styles from '../../styles/Pokemon.module.css';
 import Image from 'next/image';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Link from 'next/link';
 
 interface result {
   results: [
@@ -103,6 +104,11 @@ const Pokemon = ({ pokemon }: PokemonProps) => {
         <div>
           <h4>Peso</h4>
           <p>{pokemon.weight / 10}Kg</p>
+        </div>
+        <div>
+          <Link href="/" className={styles.button}>
+            <h4>Voltar</h4>
+          </Link>
         </div>
       </section>
     </div>

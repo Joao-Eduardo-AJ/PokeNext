@@ -23,11 +23,11 @@
 }
 
 .linkItems li {
-  transition: 0.4s;
+  transition: 0.2s;
 }
 
 .linkItems li:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .link {
