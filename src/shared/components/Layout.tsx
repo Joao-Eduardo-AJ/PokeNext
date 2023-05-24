@@ -6,16 +6,15 @@ interface ILayout {
   children: ReactNode;
 }
 
-export const Layout = ({ children }: ILayout) => {
-  return (
-    <>
-      <Head>
-        <link rel="shortcut icon" href="/images/favicon.icon" />
-        <title>PokeNext</title>
-      </Head>
-      <Navbar />
-      <main className="mainContainer">{children}</main>
-      <Footer />
-    </>
-  );
-};
+export const Layout = ({ children }: ILayout) => (
+  <>
+    <Head>
+      <link rel="shortcut icon" href="images/favicon.ico" />
+      <title>PokeNext</title>
+    </Head>
+    <Navbar />
+    <main className="mainContainer">{children}</main>
+
+    <Footer />
+  </>
+);
