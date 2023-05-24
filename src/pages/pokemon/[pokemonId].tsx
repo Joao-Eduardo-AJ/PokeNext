@@ -30,7 +30,7 @@ type PokemonProps = {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
-    const maxPokemons = 151;
+    const maxPokemons = 1010;
     const api = 'https://pokeapi.co/api/v2/pokemon/';
 
     const result = await fetch(`${api}?limit=${maxPokemons}`);
