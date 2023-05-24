@@ -1,7 +1,9 @@
-import styles from '../../styles/Pokemon.module.css';
-import Image from 'next/image';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
+
+import styles from '../../styles/Pokemon.module.css';
+import { TextsProvider } from '@/translation';
 
 interface result {
   results: [
@@ -72,6 +74,8 @@ export const getStaticProps: GetStaticProps = async context => {
 };
 
 const Pokemon = ({ pokemon }: PokemonProps) => {
+  const texts = TextsProvider.get();
+
   return (
     <div className={styles.pokemonPageContent}>
       <article>
@@ -82,9 +86,9 @@ const Pokemon = ({ pokemon }: PokemonProps) => {
           height={200}
           alt={pokemon.name}
         />
-        <h3>Número</h3>
+        <h3>{texts.POKEMON_NUMBER_TEXT}</h3>
         <p>{`#${pokemon.id}`}</p>
-        <h3>Tipo</h3>
+        <h3>{texts.POKEMON_TYPE_TEXT}</h3>
         <div>
           {pokemon.types.map((item, index) => (
             <span
@@ -98,16 +102,16 @@ const Pokemon = ({ pokemon }: PokemonProps) => {
       </article>
       <section>
         <div>
-          <h4>Altura</h4>
+          <h4>{texts.POKEMON_HEIGHT_TEXT}</h4>
           <p>{pokemon.height * 10}cm</p>
         </div>
         <div>
-          <h4>Peso</h4>
+          <h4>{texts.POKEMON_WEIGHT_TEXT}</h4>
           <p>{pokemon.weight / 10}Kg</p>
         </div>
         <div>
           <Link href="/" className={styles.button}>
-            <h4>Voltar</h4>
+            <h4>{texts.POKEMON_BUTTON_BACK}</h4>
           </Link>
         </div>
       </section>

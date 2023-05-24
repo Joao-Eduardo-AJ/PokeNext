@@ -1,16 +1,15 @@
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-import Card from '@/shared/components/Card';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/effect-coverflow';
+import Image from 'next/image';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'swiper/css/effect-coverflow';
 import { useRouter } from 'next/router';
-
 import { EffectCoverflow } from 'swiper';
 import { useEffect, useState } from 'react';
-import { SearchInput } from '@/shared/components/SearchInput';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import styles from '../styles/Home.module.css';
+import { SearchInput, Card } from '@/shared/components';
 interface result {
   results: [
     {

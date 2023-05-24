@@ -1,7 +1,8 @@
 import Image from 'next/image';
 
-import styles from '../../styles/Card.module.css';
 import Link from 'next/link';
+import { TextsProvider } from '@/translation';
+import styles from '../../styles/Card.module.css';
 
 interface CardProps {
   pokemon: {
@@ -10,7 +11,8 @@ interface CardProps {
   };
 }
 
-const Card = ({ pokemon }: CardProps) => {
+export const Card = ({ pokemon }: CardProps) => {
+  const texts = TextsProvider.get();
   return (
     <div className={styles.pokemonCard}>
       <Image
@@ -22,10 +24,8 @@ const Card = ({ pokemon }: CardProps) => {
       <p>#{pokemon.id}</p>
       <h3>{pokemon.name}</h3>
       <Link href={`/pokemon/${pokemon.id}`}>
-        <button>Detalhes</button>
+        <button>{texts.CARD_BUTTON_DETAILS}</button>
       </Link>
     </div>
   );
 };
-
-export default Card;
