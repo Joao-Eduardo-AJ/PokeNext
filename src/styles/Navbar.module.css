@@ -3,7 +3,7 @@
   height: 7vh;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.2rem;
+  padding: 1rem;
   background-color: #333;
   color: #f0f0f0;
   border-bottom: 2px solid #111;
@@ -13,13 +13,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: .5rem;
 }
 
 .linkItems {
   display: flex;
+  align-items: center;
   gap: 1rem;;
   list-style: none;
+}
+
+@media (max-width: 400px) {
+  .linkItems {
+    gap: .2rem;
+  }
 }
 
 .linkItems li {
@@ -27,13 +34,14 @@
 }
 
 .linkItems li:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .link {
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #f0f0f0;
-  padding: 0.3rem;
+  padding: 0.2rem;
+  cursor: pointer;
 }
