@@ -53,7 +53,7 @@
     }
 
     .pokemonCard button {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 }
 
@@ -72,6 +72,6 @@
     }
 
     .pokemonCard button {
-        font-size: 2rem;
+        font-size: 1.2rem;
     }
 }
