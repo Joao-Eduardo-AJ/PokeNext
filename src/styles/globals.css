@@ -1,12 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
   padding: 0;
   margin: 0;
-  font-family: Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
 }
 
 .mainContainer {
+  background-color: #ececec;
   display: flex;
   justify-content: center;
   height: 75vh;
+}
+
+button {
+  text-transform: uppercase;
 }
