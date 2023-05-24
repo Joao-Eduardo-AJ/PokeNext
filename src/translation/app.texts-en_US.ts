@@ -16,4 +16,6 @@ export const Texts = {
   POKEMON_WEIGHT_TEXT: 'Weight',
 
   POKEMON_BUTTON_BACK: 'Back',
+
+  INVALID_NAME: 'Invalid name',
 };

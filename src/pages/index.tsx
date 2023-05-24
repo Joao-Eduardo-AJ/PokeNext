@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import styles from '../styles/Home.module.css';
 import { SearchInput, Card } from '@/shared/components';
+import { TextsProvider } from '@/translation';
 interface result {
   results: [
     {
@@ -55,6 +56,7 @@ export const getStaticProps = async () => {
 const Home = ({ pokemons }: PokemonProps) => {
   const [pageWidth, setPageWidth] = useState(0);
   const router = useRouter();
+  const texts = TextsProvider.get();
 
   const handleSearch = (search: string) => {
     if (!isNaN(Number(search)) && search !== '') {
@@ -66,7 +68,7 @@ const Home = ({ pokemons }: PokemonProps) => {
       if (pokemonId) {
         router.push(`/pokemon/${pokemonId}`);
       } else {
-        alert('Nome inválido');
+        alert(texts.INVALID_NAME);
       }
     }
   };
