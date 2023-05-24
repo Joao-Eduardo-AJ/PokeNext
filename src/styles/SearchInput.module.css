@@ -1,0 +1,33 @@
+.inputWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.inputWrapper input {
+    color: #f1f1f1;
+    background-color: #333;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #E33D33;
+    border-top: 1px solid #E33D33;
+    border-left: 1px solid #E33D33;
+    border-radius: .5rem 0 0 .5rem;
+    padding: .5rem;
+    width: 16rem;
+}
+
+.inputWrapper button {
+    display: flex;
+    padding: .5rem;
+    background-color: #E33D33;
+    border: none;
+    border-radius: 0 .5rem 0.5rem 0;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.inputWrapper button:hover {
+    background-color: #D50B08;
+}
