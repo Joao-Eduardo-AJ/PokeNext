@@ -6,9 +6,11 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { useRouter } from 'next/router';
 
 import { EffectCoverflow } from 'swiper';
 import { useEffect, useState } from 'react';
+import { SearchInput } from '@/shared/components/SearchInput';
 interface result {
   results: [
     {
@@ -28,7 +30,7 @@ type PokemonProps = {
 
 export const getStaticProps = async () => {
   try {
-    const maxPokemons = 151;
+    const maxPokemons = 1010;
     const api = 'https://pokeapi.co/api/v2/pokemon/';
 
     const result = await fetch(`${api}?limit=${maxPokemons}`);
@@ -53,6 +55,22 @@ export const getStaticProps = async () => {
 
 const Home = ({ pokemons }: PokemonProps) => {
   const [pageWidth, setPageWidth] = useState(0);
+  const router = useRouter();
+
+  const handleSearch = (search: string) => {
+    if (!isNaN(Number(search)) && search !== '') {
+      router.push(`/pokemon/${search}`);
+    } else {
+      const pokemonId = pokemons.find(
+        pokemon => pokemon.name === search.toLowerCase()
+      )?.id;
+      if (pokemonId) {
+        router.push(`/pokemon/${pokemonId}`);
+      } else {
+        alert('Nome inválido');
+      }
+    }
+  };
 
   useEffect(() => {
     function handleResize() {
@@ -85,6 +103,7 @@ const Home = ({ pokemons }: PokemonProps) => {
             alt="PokeNext"
           />
         </div>
+        <SearchInput handleSearch={search => handleSearch(search)} />
       </article>
       <section className={styles.cardWrapper}>
         <Swiper
@@ -103,7 +122,7 @@ const Home = ({ pokemons }: PokemonProps) => {
           modules={[EffectCoverflow]}
           style={{ padding: '1rem 0 ' }}
         >
-          {pokemons.map((pokemon, index) => (
+          {pokemons.slice(0, 151).map((pokemon, index) => (
             <SwiperSlide key={pokemon.id} virtualIndex={index}>
               <Card pokemon={pokemon} />
             </SwiperSlide>
