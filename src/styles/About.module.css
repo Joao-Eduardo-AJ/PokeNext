@@ -12,6 +12,10 @@
     font-size: 2rem;
 }
 
+.about p {
+    line-height: 1.5rem;
+}
+
 @media (min-width: 800px) {
     .about h1 {
         font-size: 3rem;
