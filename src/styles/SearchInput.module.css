@@ -8,6 +8,7 @@
 .inputWrapper input {
     color: #f1f1f1;
     background-color: #333;
+    height: 2.2rem;
     outline: none;
     border: none;
     border-bottom: 1px solid #E33D33;
@@ -21,6 +22,7 @@
 .inputWrapper button {
     display: flex;
     padding: .5rem;
+    height: 2.2rem;
     background-color: #E33D33;
     border: none;
     border-radius: 0 .5rem 0.5rem 0;
@@ -30,4 +32,17 @@
 
 .inputWrapper button:hover {
     background-color: #D50B08;
+}
+
+@media (min-width: 800px) and (min-height: 900px) {
+    .inputWrapper input {
+        height: 3rem;
+    }
+    .inputWrapper button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3rem;
+        width: 3rem;
+    }
 }
